@@ -1,5 +1,8 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
+const uri = "mongodb+srv://fcova89:K2impianti2021!@cluster0.lfhxz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
+mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
 
 let Person;
 
