@@ -15,7 +15,7 @@ const personSchema = new mongoose.Schema({ //creo Schema per un modello
 let Person = mongoose.model('Person', personSchema); //assegno a Person il modello basato sullo schema PersonShcema
 
 const createAndSavePerson = (done) => {
-  //create a document instance of Person
+  /*//create a document instance of Person
   const francesco = new Person({
     name: 3,//'Francesco',
     age: 33,
@@ -27,7 +27,7 @@ const createAndSavePerson = (done) => {
     };// se c'è un errore manda alla console errore
     done(null, data) // se non c'è errore fai partire callback
   })
-};
+};*/
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
