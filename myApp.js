@@ -2,9 +2,9 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const uri = "mongodb+srv://fcova89:K2impianti2021!@cluster0.lfhxz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true }); //collego mongoose ad URI Atlas MongoDB
 
-const personSchema = new mongoose.Schema({
+const personSchema = new mongoose.Schema({ //creo Schema per un modello
   name: { 
     type: String,
     required: true},
@@ -12,7 +12,7 @@ const personSchema = new mongoose.Schema({
   favoriteFoods: [String]
 });
 
-let Person = mongoose.model('Person', personSchema);;
+let Person = mongoose.model('Person', personSchema); //assegno a Person il modello basato sullo schema PersonShcema
 
 const createAndSavePerson = (done) => {
   //create a document instance of Person
@@ -21,10 +21,12 @@ const createAndSavePerson = (done) => {
     age: 33,
     favoriteFoods: ['goma wakame','pollo arrosto','pesce']
   });
-  francesco.save((err, data) =>{
-    if (err) return console.error(err);// se c'è un errore manda alla console errore
-    done(null, data) // se non c'è errore invia dati?!?
-  }
+  francesco.save((err, data) =>{ //è una promise?
+    if (err) {
+      return console.error(err)
+    };// se c'è un errore manda alla console errore
+    done(null, data) // se non c'è errore fai partire callback
+  })
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
