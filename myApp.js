@@ -26,8 +26,8 @@ const createAndSavePerson = (done) => {
       return console.error(err)
     };// se c'è un errore manda alla console errore
     done(null, data) // se non c'è errore fai partire callback
-  })
-};*/
+  })*/
+};
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
